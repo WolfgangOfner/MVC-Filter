@@ -1,0 +1,25 @@
+﻿
+
+@model HandleErrorInfo
+
+@{
+    ViewBag.Title = "Something went wrong";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error accessing list</title>
+</head>
+<body>
+    <h2>Sorry something went wrong</h2>
+    <span>
+        The value @(((ArgumentOutOfRangeException)Model.Exception).ActualValue)
+        was out of the expected range.Use a smaller number which is zero or greater
+    </span>
+    <div>
+        @Html.ActionLink("Change value and try again", "Index")
+    </div>
+</body>
+</html>
+
